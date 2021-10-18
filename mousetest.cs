@@ -46,6 +46,33 @@ public class mousetest : MonoBehaviour
         }
     }
 
+    void Mouseclick_object()
+    {
+        if (Input.GetMouseButtonDown(0) == true)
+        {
+            Vector3 mpos = Vector3.zero;
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit) == true)
+            {
+                Debug.Log(hit.transform.name);  
+                Debug.Log(hit.point);
+
+                this.transform.position = hit.point;
+
+                /*
+                if (hit.transform.name == "Cube")  //마우스로 클릭한 오브젝트 이름이 Cube면 삭제
+                {
+                    Destroy(hit.transform.gameObject);
+                }
+                */
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -58,10 +85,13 @@ public class mousetest : MonoBehaviour
         {
             Mousescale();
         }
-        
-        
 
-        
+        Mouseclick_object();
+
+
+
+
+
 
         //0:왼쪽버튼  1:오른쪽버튼  2:휠  3~~ :
 
