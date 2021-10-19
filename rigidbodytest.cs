@@ -14,7 +14,7 @@ public class rigidbodytest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+       
         bool keycheck = false;
 
         if(Input.GetKey(KeyCode.LeftArrow)==true)
@@ -45,7 +45,7 @@ public class rigidbodytest : MonoBehaviour
         {
             this.GetComponent<Rigidbody>().velocity = Vector3.zero; //속도값을 0으로 변경해서 멈춤
         }
-        */
+       
 
     }
 }
